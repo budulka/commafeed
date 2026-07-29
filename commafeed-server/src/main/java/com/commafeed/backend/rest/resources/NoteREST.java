@@ -1,6 +1,5 @@
 package com.commafeed.backend.rest.resources;
 
-import com.commafeed.backend.auth.AuthenticationContext;
 import com.commafeed.backend.dao.FeedEntryDAO;
 import com.commafeed.backend.dao.FeedEntryNoteDAO;
 import com.commafeed.backend.model.FeedEntry;
@@ -9,22 +8,23 @@ import com.commafeed.backend.model.User;
 import com.commafeed.backend.rest.request.NoteRequest;
 import com.commafeed.backend.rest.response.NoteResponse;
 import com.commafeed.backend.service.FeedEntryNoteService;
-import com.commafeed.backend.util.Roles;
+import com.commafeed.security.AuthenticationContext;
+import com.commafeed.security.Roles;
+import jakarta.annotation.security.RolesAllowed;
+import jakarta.inject.Singleton;
+import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DefaultValue;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.annotation.security.RolesAllowed;
-import javax.inject.Singleton;
-import javax.transaction.Transactional;
-import javax.validation.Valid;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DefaultValue;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 @Path("/rest/note")
 @RolesAllowed(Roles.USER)

@@ -1,10 +1,10 @@
 package com.commafeed.backend.rest.request;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.io.Serializable;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import lombok.Data;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 @SuppressWarnings("serial")
 @Schema(description = "Note Request")

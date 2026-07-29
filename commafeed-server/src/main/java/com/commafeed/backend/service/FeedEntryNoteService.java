@@ -5,11 +5,11 @@ import com.commafeed.backend.dao.FeedEntryNoteDAO;
 import com.commafeed.backend.model.FeedEntry;
 import com.commafeed.backend.model.FeedEntryNote;
 import com.commafeed.backend.model.User;
+import jakarta.inject.Singleton;
+import jakarta.transaction.Transactional;
+import jakarta.validation.ValidationException;
 import java.time.Instant;
 import java.util.List;
-import javax.inject.Singleton;
-import javax.transaction.Transactional;
-import javax.validation.ValidationException;
 
 @Singleton
 public class FeedEntryNoteService {

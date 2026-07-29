@@ -1,10 +1,10 @@
 package com.commafeed.backend.rest.response;
 
 import com.commafeed.backend.model.FeedEntryNote;
-import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serializable;
 import java.time.Instant;
 import lombok.Data;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 @SuppressWarnings("serial")
 @Schema(description = "Note Response")

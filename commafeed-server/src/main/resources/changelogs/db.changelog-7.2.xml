@@ -15,4 +15,20 @@
 		<dropColumn tableName="USERSETTINGS" columnName="pocket" />
 	</changeSet>
 
+	<changeSet id="create-feed-entry-notes" author="athou">
+		<createTable tableName="FEEDENTRYNOTES">
+			<column name="id" type="BIGINT" autoIncrement="true">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="created" type="${timestamp_type}" />
+			<column name="updated" type="${timestamp_type}" />
+			<column name="text" type="VARCHAR(500)" />
+			<column name="rating" type="INT" />
+			<column name="entry_id" type="BIGINT" />
+			<column name="user_id" type="BIGINT" />
+		</createTable>
+		<addForeignKeyConstraint baseTableName="FEEDENTRYNOTES" baseColumnNames="entry_id" constraintName="FK_FEEDENTRYNOTES_ENTRY" referencedTableName="FEEDENTRIES" referencedColumnNames="id" />
+		<addForeignKeyConstraint baseTableName="FEEDENTRYNOTES" baseColumnNames="user_id" constraintName="FK_FEEDENTRYNOTES_USER" referencedTableName="USERS" referencedColumnNames="id" />
+	</changeSet>
+
 </databaseChangeLog>

@@ -29,8 +29,8 @@ public class FeedEntryNoteDAO extends GenericDAO<FeedEntryNote> {
         JPAQuery<FeedEntryNote> q = query().selectFrom(NOTE)
                 .where(NOTE.user.eq(user))
                 .orderBy(NOTE.created.desc());
-        if (offset > 0) q.offset(offset);
-        if (limit > 0) q.limit(limit);
+        if (offset > 0) { q.offset(offset); }
+        if (limit > 0) { q.limit(limit); }
         setTimeout(q, Duration.ZERO);
         return q.fetch();
     }

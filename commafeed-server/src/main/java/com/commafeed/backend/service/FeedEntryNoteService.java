@@ -1,16 +1,15 @@
 package com.commafeed.backend.service;
 
-import com.commafeed.backend.dao.FeedEntryNoteDAO;
 import com.commafeed.backend.dao.FeedEntryDAO;
+import com.commafeed.backend.dao.FeedEntryNoteDAO;
 import com.commafeed.backend.model.FeedEntry;
 import com.commafeed.backend.model.FeedEntryNote;
 import com.commafeed.backend.model.User;
-
+import java.time.Instant;
+import java.util.List;
 import javax.inject.Singleton;
 import javax.transaction.Transactional;
 import javax.validation.ValidationException;
-import java.time.Instant;
-import java.util.List;
 
 @Singleton
 public class FeedEntryNoteService {

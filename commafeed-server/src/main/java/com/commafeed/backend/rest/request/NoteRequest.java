@@ -1,11 +1,10 @@
 package com.commafeed.backend.rest.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
-
+import java.io.Serializable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
+import lombok.Data;
 
 @SuppressWarnings("serial")
 @Schema(description = "Note Request")

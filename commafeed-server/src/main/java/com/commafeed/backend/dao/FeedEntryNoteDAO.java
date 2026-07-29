@@ -4,11 +4,10 @@ import com.commafeed.backend.model.FeedEntry;
 import com.commafeed.backend.model.FeedEntryNote;
 import com.commafeed.backend.model.User;
 import com.querydsl.jpa.impl.JPAQuery;
-
-import javax.inject.Singleton;
-import javax.persistence.EntityManager;
 import java.time.Duration;
 import java.util.List;
+import javax.inject.Singleton;
+import javax.persistence.EntityManager;
 
 @Singleton
 public class FeedEntryNoteDAO extends GenericDAO<FeedEntryNote> {
@@ -26,9 +25,8 @@ public class FeedEntryNoteDAO extends GenericDAO<FeedEntryNote> {
     }
 
     public List<FeedEntryNote> findByUser(User user, int offset, int limit) {
-        JPAQuery<FeedEntryNote> q = query().selectFrom(NOTE)
-                .where(NOTE.user.eq(user))
-                .orderBy(NOTE.created.desc());
+        JPAQuery<FeedEntryNote> q =
+                query().selectFrom(NOTE).where(NOTE.user.eq(user)).orderBy(NOTE.created.desc());
         if (offset > 0) {
             q.offset(offset);
         }

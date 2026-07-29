@@ -20,7 +20,9 @@ public class NoteResponse implements Serializable {
     private Instant updated;
 
     public static NoteResponse from(FeedEntryNote note) {
-        if (note == null) { return null; }
+        if (note == null) {
+            return null;
+        }
         NoteResponse r = new NoteResponse();
         r.setId(note.getId());
         r.setEntryId(note.getEntry().getId());

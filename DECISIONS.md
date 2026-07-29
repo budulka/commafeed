@@ -27,3 +27,15 @@ A running log of key decisions, overridden proposals, and reasoning redirects du
 
 ---
 
+## [2026-07-29 11:16] - Saved-entry-notes plan adjusted to task requirements
+
+**Proposal:** Implement four endpoints (POST, GET list, GET by entry, DELETE) in the saved-entry-notes plan.
+
+**Issue:** The task required only two endpoints: POST to create/attach a note and GET to list the current user's notes. Adding extra endpoints deviated from the user's specification and risked scope creep.
+
+**Decision:** Updated the saved-entry-notes plan to include only the two required endpoints: POST `/rest/note` (create/attach) and GET `/rest/note` (list current user's notes). Removed GET by entry and DELETE from the plan.
+
+**Rationale:** Follow the user's explicit requirements to avoid scope creep and implement minimal, required functionality. This keeps the implementation aligned with the task and prevents unnecessary extra work.
+
+---
+

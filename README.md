@@ -179,7 +179,7 @@ My workflow followed these principles:
 
 **Create or update a note:**
 ```bash
-curl -u admin:admin -X POST http://localhost:8082/rest/note \
+curl -u admin:admin -X POST http://localhost:8083/rest/note \
   -H "Content-Type: application/json" \
   -d '{"entryId": 123, "text": "This is a great article!", "rating": 5}'
 ```
@@ -197,7 +197,7 @@ Response: `201 Created` or `200 OK` with JSON:
 
 **List user notes:**
 ```bash
-curl -u admin:admin "http://localhost:8082/rest/note?limit=10"
+curl -u admin:admin "http://localhost:8083/rest/note?limit=10"
 ```
 Response: `200 OK` with a list of notes.
 
@@ -205,7 +205,7 @@ Response: `200 OK` with a list of notes.
 
 **Generate alternative title:**
 ```bash
-curl -u admin:admin -X POST http://localhost:8082/rest/entry/123/generate-alternative \
+curl -u admin:admin -X POST http://localhost:8083/rest/entry/123/generate-alternative \
   -H "Content-Type: application/json" \
   -d '{"target": "title", "prompt": "Rewrite this headline to be more professional"}'
 ```

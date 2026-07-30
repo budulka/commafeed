@@ -10,16 +10,6 @@ import java.time.Duration;
 @Singleton
 public class LLMService {
 
-    public static class LLMException extends Exception {
-        public LLMException(String msg) {
-            super(msg);
-        }
-
-        public LLMException(String msg, Throwable t) {
-            super(msg, t);
-        }
-    }
-
     /**
      * Generate an alternative text given source and a prompt. Provider is selected via LLM_PROVIDER env.
      */
@@ -81,7 +71,19 @@ public class LLMService {
     }
 
     private static String escapeJson(String s) {
-        if (s == null) return "";
+        if (s == null) {
+            return "";
+        }
         return s.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n");
+    }
+
+    public static class LLMException extends Exception {
+        public LLMException(String msg) {
+            super(msg);
+        }
+
+        public LLMException(String msg, Throwable t) {
+            super(msg, t);
+        }
     }
 }

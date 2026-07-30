@@ -95,10 +95,6 @@ public class FeedEntryService {
         }
     }
 
-    public FeedEntry getById(Long id) {
-        return feedEntryDAO.findById(id);
-    }
-
     public void starEntry(User user, Long entryId, Long subscriptionId, boolean starred) {
 
         FeedSubscription sub = feedSubscriptionDAO.findById(user, subscriptionId);

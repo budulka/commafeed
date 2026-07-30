@@ -54,7 +54,6 @@ public class GenerateAlternativeREST {
                     .build();
         }
 
-        User user = authenticationContext.getCurrentUser();
         FeedEntry entry = feedEntryService.getById(id);
         if (entry == null) {
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "entry not found")).build();

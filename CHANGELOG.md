@@ -2,6 +2,7 @@
 
 ## [7.2.0]
 
+- Add an endpoint to rewrite feed entry titles or content using an LLM (#task-2)
 - Add support for icons declared in feeds. This is useful for feeds exposed by RSS bridges (#2048)
 - Search now also works for starred entries (#2217)
 - The error message when subscribing to a feed is now properly displayed again

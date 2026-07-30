@@ -39,3 +39,15 @@ A running log of key decisions, overridden proposals, and reasoning redirects du
 
 ---
 
+## [2026-07-30 13:45] - LLM Rewrite Implementation
+
+**Proposal:** Call `FeedEntryDAO.findById(id)` directly in `GenerateAlternativeREST` to retrieve the entry.
+
+**Issue:** Calling the DAO directly bypasses the service layer, which is inconsistent with the project's architecture where REST resources typically interact with services.
+
+**Decision:** Added `getById(Long id)` to `FeedEntryService` which delegates to the DAO.
+
+**Rationale:** Maintains architectural consistency and separation of concerns by ensuring all business logic and data access for feed entries go through `FeedEntryService`.
+
+---
+

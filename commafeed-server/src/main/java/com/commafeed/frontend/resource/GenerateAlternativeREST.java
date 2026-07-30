@@ -20,11 +20,10 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
-
-import java.util.Map;
 
 @Path("/rest/entry/{id}/generate-alternative")
 @RolesAllowed(Roles.USER)
@@ -41,8 +40,11 @@ public class GenerateAlternativeREST {
 
     @POST
     @Transactional
-    @Operation(summary = "Generate alternative for entry title or content", description = "Rewrite or rephrase an entry's title or content using an LLM")
-    public Response generateAlternative(@PathParam("id") Long id, @Valid GenerateAlternativeRequest req) {
+    @Operation(
+            summary = "Generate alternative for entry title or content",
+            description = "Rewrite or rephrase an entry's title or content using an LLM")
+    public Response generateAlternative(
+            @PathParam("id") Long id, @Valid GenerateAlternativeRequest req) {
         Preconditions.checkNotNull(req);
         Preconditions.checkNotNull(req.getTarget());
         Preconditions.checkNotNull(req.getPrompt());
@@ -55,18 +57,26 @@ public class GenerateAlternativeREST {
 
         FeedEntry entry = feedEntryService.getById(id);
         if (entry == null) {
-            return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "entry not found")).build();
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity(Map.of("error", "entry not found"))
+                    .build();
         }
 
         FeedEntryContent content = entry.getContent();
-        String source = "title".equals(req.getTarget()) ? (content == null ? "" : content.getTitle()) : (content == null ? "" : content.getContent());
+        String source =
+                "title".equals(req.getTarget())
+                        ? (content == null ? "" : content.getTitle())
+                        : (content == null ? "" : content.getContent());
 
         try {
             String alt = llmService.generateAlternative(source, req.getPrompt());
 
             GenerateAlternativeResponse resp = new GenerateAlternativeResponse();
             GenerateAlternativeResponse.OriginalEntry original =
-                    new GenerateAlternativeResponse.OriginalEntry(String.valueOf(entry.getId()), content == null ? null : content.getTitle(), content == null ? null : content.getContent());
+                    new GenerateAlternativeResponse.OriginalEntry(
+                            String.valueOf(entry.getId()),
+                            content == null ? null : content.getTitle(),
+                            content == null ? null : content.getContent());
             resp.setOriginal(original);
             resp.setTarget(req.getTarget());
             resp.setPrompt(req.getPrompt());
@@ -74,7 +84,9 @@ public class GenerateAlternativeREST {
 
             return Response.ok(resp).build();
         } catch (LLMService.LLMException e) {
-            return Response.status(Response.Status.BAD_GATEWAY).entity(Map.of("error", "LLM service failed")).build();
+            return Response.status(Response.Status.BAD_GATEWAY)
+                    .entity(Map.of("error", "LLM service failed"))
+                    .build();
         }
     }
 }

@@ -7,10 +7,9 @@ import com.commafeed.backend.service.LLMService;
 import com.commafeed.frontend.model.request.GenerateAlternativeRequest;
 import com.commafeed.security.AuthenticationContext;
 import jakarta.ws.rs.core.Response;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
-import org.junit.jupiter.api.Assertions;
 
 public class GenerateAlternativeRESTTest {
 
@@ -31,7 +30,8 @@ public class GenerateAlternativeRESTTest {
         Mockito.when(llmService.generateAlternative(Mockito.anyString(), Mockito.anyString()))
                 .thenReturn("Rewritten text");
 
-        GenerateAlternativeREST rest = new GenerateAlternativeREST(auth, feedEntryService, llmService);
+        GenerateAlternativeREST rest =
+                new GenerateAlternativeREST(auth, feedEntryService, llmService);
 
         GenerateAlternativeRequest req = new GenerateAlternativeRequest();
         req.setTarget("title");
@@ -42,7 +42,9 @@ public class GenerateAlternativeRESTTest {
         Object entity = resp.getEntity();
         Assertions.assertNotNull(entity);
         // basic checks on the response object's fields
-        Assertions.assertTrue(entity.toString().contains("Rewritten text") || entity.toString().contains("alternative"));
+        Assertions.assertTrue(
+                entity.toString().contains("Rewritten text")
+                        || entity.toString().contains("alternative"));
     }
 
     @Test
@@ -51,7 +53,8 @@ public class GenerateAlternativeRESTTest {
         FeedEntryService feedEntryService = Mockito.mock(FeedEntryService.class);
         LLMService llmService = Mockito.mock(LLMService.class);
 
-        GenerateAlternativeREST rest = new GenerateAlternativeREST(auth, feedEntryService, llmService);
+        GenerateAlternativeREST rest =
+                new GenerateAlternativeREST(auth, feedEntryService, llmService);
 
         GenerateAlternativeRequest req = new GenerateAlternativeRequest();
         req.setTarget("invalid");
@@ -69,7 +72,8 @@ public class GenerateAlternativeRESTTest {
 
         Mockito.when(feedEntryService.getById(999L)).thenReturn(null);
 
-        GenerateAlternativeREST rest = new GenerateAlternativeREST(auth, feedEntryService, llmService);
+        GenerateAlternativeREST rest =
+                new GenerateAlternativeREST(auth, feedEntryService, llmService);
 
         GenerateAlternativeRequest req = new GenerateAlternativeRequest();
         req.setTarget("content");
@@ -96,7 +100,8 @@ public class GenerateAlternativeRESTTest {
         Mockito.when(llmService.generateAlternative(Mockito.anyString(), Mockito.anyString()))
                 .thenThrow(new LLMService.LLMException("fail"));
 
-        GenerateAlternativeREST rest = new GenerateAlternativeREST(auth, feedEntryService, llmService);
+        GenerateAlternativeREST rest =
+                new GenerateAlternativeREST(auth, feedEntryService, llmService);
         GenerateAlternativeRequest req = new GenerateAlternativeRequest();
         req.setTarget("content");
         req.setPrompt("p");

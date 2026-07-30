@@ -161,7 +161,11 @@ the [Docker image](https://github.com/Athou/commafeed/blob/master/commafeed-serv
 
 ## My AI Workflow
 
-For this project, I used **Junie** (powered by Gemini-3-Flash). My workflow followed these principles:
+For this project, I used a combination of AI agents:
+- **GitHub Copilot** was used for **Level 1 (Saved Entry Notes)** to quickly scaffold the vertical slice (Entity, DAO, Service, REST) following existing patterns.
+- **Junie** (powered by Gemini-3-Flash) was used for **Level 2 (LLM 'Rewrite This Entry')** to handle the more complex integration with external APIs, error mapping, and architectural refinements.
+
+My workflow followed these principles:
 
 1. **Plan-First Approach**: Before writing any code, I generated and refined implementation plans in the `specs/` folder. This ensured that both the AI and the user were aligned on the architectural direction.
 2. **Context Management**: Instead of pasting the whole codebase, I used tools to explore the project structure and selectively read relevant files (Service, DAO, Model, Resource) to build a mental map of the project's patterns.

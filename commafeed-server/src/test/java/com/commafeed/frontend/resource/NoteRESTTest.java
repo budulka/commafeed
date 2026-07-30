@@ -49,15 +49,20 @@ public class NoteRESTTest {
         FeedEntry entry = new FeedEntry();
         entry.setId(123L);
         Mockito.when(feedEntryDAO.findById(123L)).thenReturn(entry);
-        
+
         FeedEntryNote note = new FeedEntryNote();
         note.setId(1L);
         note.setUser(user);
         note.setEntry(entry);
         note.setText("My note");
         note.setRating(5);
-        
-        Mockito.when(feedEntryNoteService.createOrAttach(Mockito.eq(user), Mockito.eq(123L), Mockito.anyString(), Mockito.anyInt()))
+
+        Mockito.when(
+                        feedEntryNoteService.createOrAttach(
+                                Mockito.eq(user),
+                                Mockito.eq(123L),
+                                Mockito.anyString(),
+                                Mockito.anyInt()))
                 .thenReturn(note);
 
         Response resp = noteREST.createNote(req);

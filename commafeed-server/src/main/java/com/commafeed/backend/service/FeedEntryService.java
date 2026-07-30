@@ -81,6 +81,10 @@ public class FeedEntryService {
         return feedEntryDAO.findById(id);
     }
 
+    public FeedEntryStatus getStatusById(Long id) {
+        return feedEntryStatusDAO.findById(id);
+    }
+
     public void markEntry(User user, Long entryId, boolean read) {
         FeedEntry entry = feedEntryDAO.findById(entryId);
         if (entry == null) {

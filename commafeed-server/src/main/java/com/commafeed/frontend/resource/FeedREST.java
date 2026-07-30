@@ -65,7 +65,6 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import jakarta.ws.rs.core.UriInfo;
 import java.io.StringWriter;
-import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.util.Collections;
 import java.util.List;
@@ -74,7 +73,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.hc.core5.http.HttpStatus;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
@@ -584,10 +582,7 @@ public class FeedREST {
                     .build();
         }
         try {
-            // opml will be encoded in the default JVM encoding, bu we want UTF-8
-            opmlImporter.importOpml(
-                    user,
-                    new String(opml.getBytes(SystemUtils.FILE_ENCODING), StandardCharsets.UTF_8));
+            opmlImporter.importOpml(user, opml);
         } catch (Exception e) {
             return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
         }

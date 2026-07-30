@@ -26,7 +26,9 @@ public class OPML11Parser extends OPML10Parser {
     @Override
     public WireFeed parse(Document document, boolean validate, Locale locale)
             throws IllegalArgumentException, FeedException {
-        document.getRootElement().getChildren().add(new Element("head"));
+        if (document.getRootElement().getChild("head") == null) {
+            document.getRootElement().addContent(new Element("head"));
+        }
         return super.parse(document, validate, locale);
     }
 }

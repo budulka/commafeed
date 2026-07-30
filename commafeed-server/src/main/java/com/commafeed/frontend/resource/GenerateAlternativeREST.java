@@ -2,6 +2,7 @@ package com.commafeed.frontend.resource;
 
 import com.commafeed.backend.model.FeedEntry;
 import com.commafeed.backend.model.FeedEntryContent;
+import com.commafeed.backend.model.FeedEntryStatus;
 import com.commafeed.backend.service.FeedEntryService;
 import com.commafeed.backend.service.LLMService;
 import com.commafeed.frontend.model.GenerateAlternativeResponse;
@@ -55,12 +56,16 @@ public class GenerateAlternativeREST {
                     .build();
         }
 
-        FeedEntry entry = feedEntryService.getById(id);
-        if (entry == null) {
+        FeedEntryStatus status = feedEntryService.getStatusById(id);
+        if (status == null
+                || !status.getUser()
+                        .getId()
+                        .equals(authenticationContext.getCurrentUser().getId())) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity(Map.of("error", "entry not found"))
                     .build();
         }
+        FeedEntry entry = status.getEntry();
 
         FeedEntryContent content = entry.getContent();
         String source =
@@ -74,7 +79,7 @@ public class GenerateAlternativeREST {
             GenerateAlternativeResponse resp = new GenerateAlternativeResponse();
             GenerateAlternativeResponse.OriginalEntry original =
                     new GenerateAlternativeResponse.OriginalEntry(
-                            String.valueOf(entry.getId()),
+                            String.valueOf(status.getId()),
                             content == null ? null : content.getTitle(),
                             content == null ? null : content.getContent());
             resp.setOriginal(original);

@@ -4,10 +4,12 @@ import com.commafeed.backend.dao.FeedEntryDAO;
 import com.commafeed.backend.dao.FeedEntryNoteDAO;
 import com.commafeed.backend.model.FeedEntry;
 import com.commafeed.backend.model.FeedEntryNote;
+import com.commafeed.backend.model.FeedEntryStatus;
 import com.commafeed.backend.model.User;
 import com.commafeed.backend.rest.request.NoteRequest;
 import com.commafeed.backend.rest.resources.NoteREST;
 import com.commafeed.backend.service.FeedEntryNoteService;
+import com.commafeed.backend.service.FeedEntryService;
 import com.commafeed.security.AuthenticationContext;
 import jakarta.ws.rs.core.Response;
 import java.util.Collections;
@@ -23,6 +25,7 @@ public class NoteRESTTest {
     private FeedEntryNoteDAO feedEntryNoteDAO;
     private FeedEntryDAO feedEntryDAO;
     private FeedEntryNoteService feedEntryNoteService;
+    private FeedEntryService feedEntryService;
     private NoteREST noteREST;
     private User user;
 
@@ -32,7 +35,14 @@ public class NoteRESTTest {
         feedEntryNoteDAO = Mockito.mock(FeedEntryNoteDAO.class);
         feedEntryDAO = Mockito.mock(FeedEntryDAO.class);
         feedEntryNoteService = Mockito.mock(FeedEntryNoteService.class);
-        noteREST = new NoteREST(auth, feedEntryNoteDAO, feedEntryDAO, feedEntryNoteService);
+        feedEntryService = Mockito.mock(FeedEntryService.class);
+        noteREST =
+                new NoteREST(
+                        auth,
+                        feedEntryNoteDAO,
+                        feedEntryDAO,
+                        feedEntryNoteService,
+                        feedEntryService);
 
         user = new User();
         user.setId(1L);
@@ -42,13 +52,19 @@ public class NoteRESTTest {
     @Test
     public void testCreateNoteSuccess() {
         NoteRequest req = new NoteRequest();
-        req.setEntryId(123L);
+        req.setEntryId(1002L);
         req.setText("My note");
         req.setRating(5);
 
         FeedEntry entry = new FeedEntry();
         entry.setId(123L);
-        Mockito.when(feedEntryDAO.findById(123L)).thenReturn(entry);
+
+        FeedEntryStatus status = new FeedEntryStatus();
+        status.setId(1002L);
+        status.setUser(user);
+        status.setEntry(entry);
+
+        Mockito.when(feedEntryService.getStatusById(1002L)).thenReturn(status);
 
         FeedEntryNote note = new FeedEntryNote();
         note.setId(1L);

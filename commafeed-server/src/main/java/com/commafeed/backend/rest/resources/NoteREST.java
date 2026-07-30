@@ -4,10 +4,12 @@ import com.commafeed.backend.dao.FeedEntryDAO;
 import com.commafeed.backend.dao.FeedEntryNoteDAO;
 import com.commafeed.backend.model.FeedEntry;
 import com.commafeed.backend.model.FeedEntryNote;
+import com.commafeed.backend.model.FeedEntryStatus;
 import com.commafeed.backend.model.User;
 import com.commafeed.backend.rest.request.NoteRequest;
 import com.commafeed.backend.rest.response.NoteResponse;
 import com.commafeed.backend.service.FeedEntryNoteService;
+import com.commafeed.backend.service.FeedEntryService;
 import com.commafeed.security.AuthenticationContext;
 import com.commafeed.security.Roles;
 import jakarta.annotation.security.RolesAllowed;
@@ -37,16 +39,19 @@ public class NoteREST {
     private final FeedEntryNoteDAO feedEntryNoteDAO;
     private final FeedEntryDAO feedEntryDAO;
     private final FeedEntryNoteService feedEntryNoteService;
+    private final FeedEntryService feedEntryService;
 
     public NoteREST(
             AuthenticationContext authenticationContext,
             FeedEntryNoteDAO feedEntryNoteDAO,
             FeedEntryDAO feedEntryDAO,
-            FeedEntryNoteService feedEntryNoteService) {
+            FeedEntryNoteService feedEntryNoteService,
+            FeedEntryService feedEntryService) {
         this.authenticationContext = authenticationContext;
         this.feedEntryNoteDAO = feedEntryNoteDAO;
         this.feedEntryDAO = feedEntryDAO;
         this.feedEntryNoteService = feedEntryNoteService;
+        this.feedEntryService = feedEntryService;
     }
 
     @POST
@@ -56,18 +61,20 @@ public class NoteREST {
         if (user == null) {
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
-        FeedEntry entry = feedEntryDAO.findById(req.getEntryId());
-        if (entry == null) {
+        FeedEntryStatus status = feedEntryService.getStatusById(req.getEntryId());
+        if (status == null || !status.getUser().getId().equals(user.getId())) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
+        FeedEntry entry = status.getEntry();
         boolean existed = feedEntryNoteDAO.findByEntry(user, entry) != null;
         FeedEntryNote note =
                 feedEntryNoteService.createOrAttach(
-                        user, req.getEntryId(), req.getText(), req.getRating());
+                        user, entry.getId(), req.getText(), req.getRating());
         if (note == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
         NoteResponse resp = NoteResponse.from(note);
+        resp.setEntryId(status.getId());
         if (existed) {
             return Response.ok(resp).build();
         }

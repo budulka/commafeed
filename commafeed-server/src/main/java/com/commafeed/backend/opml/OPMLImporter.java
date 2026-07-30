@@ -27,6 +27,15 @@ public class OPMLImporter {
     private final FeedCategoryDAO feedCategoryDAO;
     private final FeedSubscriptionService feedSubscriptionService;
 
+    static {
+        // force discovery of ROME parsers, including our custom OPML11Parser
+        try {
+            new WireFeedInput().build(new StringReader("<opml/>"));
+        } catch (Exception e) {
+            // ignore
+        }
+    }
+
     public void importOpml(User user, String xml) throws IllegalArgumentException, FeedException {
         xml = xmlCleaner.clean(xml);
         if (xml == null) {

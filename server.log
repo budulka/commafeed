@@ -1,0 +1,655 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 6.19
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 19
+[INFO] os.detected.release: arch
+[INFO] os.detected.release.like.arch: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -------------------< com.commafeed:commafeed-server >-------------------
+[INFO] Building CommaFeed Server 7.2.0
+[INFO]   from pom.xml
+[INFO] ------------------------------[ quarkus ]-------------------------------
+[INFO] 
+[INFO] --- quarkus:3.37.4:dev (default-cli) @ commafeed-server ---
+[INFO] Invoking checkstyle:3.6.0:check (validate) @ commafeed-server
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] Invoking spotless:3.8.0:check (default) @ commafeed-server
+[INFO] Spotless.Java is keeping 209 files clean - 0 needs changes to be clean, 0 were already clean, 209 were skipped because caching determined they were already clean
+[INFO] Invoking help:3.5.2:active-profiles (default) @ commafeed-server
+[INFO] 
+Active Profiles for Project 'com.commafeed:commafeed-server:quarkus:7.2.0':
+
+The following profiles are active:
+
+ - h2 (source: com.commafeed:commafeed-server:7.2.0)
+
+
+
+[INFO] Invoking properties:1.3.0:set-system-properties (default) @ commafeed-server
+[INFO] Set 1 system property
+[INFO] Invoking git-commit-id:10.0.0:revision (default) @ commafeed-server
+[INFO] Invoking quarkus:3.37.4:generate-code (default-generate-code) @ commafeed-server
+[INFO] Invoking resources:3.3.1:resources (default-resources) @ commafeed-server
+[INFO] Copying 34 resources from src/main/resources to target/classes
+[INFO] Invoking compiler:3.15.0:compile (default-compile) @ commafeed-server
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] Invoking quarkus:3.37.4:generate-code-tests (default-generate-code-tests) @ commafeed-server
+[INFO] Invoking quarkus-config-doc:3.37.4:generate-config-doc (default-generate-config-doc) @ commafeed-server
+[INFO] Invoking exec:3.6.3:java (default) @ commafeed-server
+[INFO] Invoking resources:3.3.1:testResources (default-testResources) @ commafeed-server
+[INFO] Copying 9 resources from src/test/resources to target/test-classes
+[INFO] Invoking compiler:3.15.0:testCompile (default-testCompile) @ commafeed-server
+[INFO] Nothing to compile - all classes are up to date.
+[WARNING] [io.quarkus.deployment.dev.DevModeCommandLineBuilder] Changed debug port to 43747 because of a port conflict
+Listening for transport dt_socket at address: 43747
+Press [e] to edit command line args (currently ''), [h] for more options>
+Tests paused
+Press [e] to edit command line args (currently ''), [r] to resume testing, [h] for more options>
+Press [e] to edit command line args (currently ''), [r] to resume testing, [o] Toggle test output, [h] for more options>
+2026-07-30 15:01:03,851 INFO  [org.testcontainers.DockerClientFactory] (build-18) Testcontainers version: 2.0.5
+2026-07-30 15:01:03,923 INFO  [io.quarkus.resteasy.reactive.jackson.deployment.processor.JacksonCodeGenerator] (build-3) Skipping generation of refDebugger failed to attach: handshake failed - connection prematurally closed
+er.FeverResponse because it contains the unsupported Jackson annotation com.fasterxml.jackson.databind.annotation.JsonSerialize
+2026-07-30 15:01:04,151 INFO  [org.testcontainers.dockerclient.DockerClientProviderStrategy] (build-18) Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-07-30 15:01:04,491 INFO  [org.testcontainers.dockerclient.DockerClientProviderStrategy] (build-18) Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2026-07-30 15:01:05,085 INFO  [io.quarkus.datasource.deployment.devservices.DevServicesDatasourceProcessor] (ForkJoinPool.commonPool-worker-3) Dev Services for default datasource (h2) started
+                                                                                                                                                      
+     .',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..                                                                                          
+    ';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;.                                                                                         
+   .;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;.                                                                                        
+   ';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;.                                                                                        
+   ';;;;;;;;;;;;;;;''''',,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:;.           .':clllc;.                                                                   
+   ';;;;;;;;;;;;;.           ..',;;;;;;;;;;;;;;;;;;;;;;;;;;:;.         .:dd:'...,lxo.                                                                 
+   ';;;;;;;;;;;:,.                .',;;;;;;;;;;;;;;;;;;;;;;:;.        .lx:.       ,o:     .....     .   ...    ....    .  ....    ...        .....    
+   ';;;;;;;;;;;;;'                   .';;;;;;;;;;;;;;;;;;;;:;.        ;ko               ;oocccoo,  .ooclcldd;:llcoxc. 'doclcldo;:lllod:   .ldlccldc.  
+   ';;;;;;;;;;;;;;;,'''....             .,;;;;;;;;;;;;;;;;;:;.        ck:              lx;     :xc .dk;   .dkc.   cx; ,xx,   'xk:.  .ox'  ,:.    ;x:  
+   ';;;;;;;;;;;;;;;;;;;;;;;;;,..          .,;;;;;;;;;;;;;;;:;.        :kc             'xl.     .ox..do.   .ox.    ;x; ,xc    .dd.    cx,  .':ccccok:  
+   ';;;;;;;;;;;;;;,.....',,;;;;;;'.         .;;;;;;;;;;;;;;:;.        .dx'        .cc.'xo.     .ox..do.   .ox.    ;x; ,xc    .dd.    cx, .dd,.   ;x:  
+   ';;;;;;;;;;;;;.          .',;;;;,.        .,;;;;;;;;;;;;:;.         'dx:.    .'ox;  cx:.   .:x: .do.   .ox.    ;x; ,xc    .dd.    cx, ;xc    .ok:  
+   ';;;;;;;;;;;;,.             .';;;;,.       .,;;;;;;;;;;;:;.          .,lodooodoc.    ,lolclol,  .oc     co.    ,d, 'o:    .ol.    :d' .:dolllccdc  
+   ';;;;;;;;;;;;;'.              .';;;;.       .,;;;;;;;;;;:;.              .....          ...                                              ...       
+   ';;;;;;;;;;;;;;;;,,,'..         .;;;;'       .;;;;;;;;;;:;.                                                                                        
+   ';;;;;;;;;;;;;;;;;;;;;;,.        .;;;;.       ';;;;;;;;;:;.         .;ccccccccc:.                                  .:.                             
+   ';;;;;;;;;;;;,'......';;;,.       .;;;,.      .;;;;;;;;;:;.        .okc,''''''''                                   ;x:                             
+   ';;;;;;;;;;;.         .,;;;.      .,;;;.       ,;;;;;;;;:;.        .dx.             ....         ....        ....  ;x:                             
+   ';;;;;;;;;;'           .;;;'       ';;;'       ';;;;;;;;:;.        .dx.          .;ol::coc.   .coc::lo:.   'lolcccclx:                             
+   ';;;;;;;;;;.           .,;;,.      ,;;;,.      ,;;;;;;;;:;.        .dkdollllll:..od'    .od. .do.    'do. ,xl.    'dk:                             
+   ';;;;;;;;;;,.          .;;;;,.   .';;;;;,.   .,;;;;;;;;;:;.        .dx'         ;xxlcccccdx;.ckdlccccldd'.ox.      ;x:                             
+   ';;;;;;;;;;;;'.       .,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:;.        .dx.         ,xl........  :x:........  lx'      :x:                             
+   ';;;;;;;;;;;;;;;'.   .;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:;.        .dx.         .ld,    .:l. .oo.    .cc. ,xo.    ,dk:                             
+   ';;;;;;;;;;;;;;,. .';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:;.        .lo.          .;oocclol'   .:olccloc.   .ldlcclccd;                             
+   ';;;;;;;;;;;;;;,,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:;.                         ....         ....         ...                                  
+   ';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:;.                                                                                        
+   .;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,.                                                                                        
+    .,;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,.                                                                                         
+      ..''''''''''''''''''''''''''''''''''''''''''''''''...                                                                                           
+                                                                                                                                                      
+                                                                                                                             Powered by Quarkus 3.37.4
+2026-07-30 15:01:05,965 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDSUBSCRIPTIONS]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRYTAGS]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDS]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [USERROLES]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [USERSETTINGS]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRIES]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDCATEGORIES]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRYCONTENTS]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [USERS]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRYNOTES]
+2026-07-30 15:01:05,971 INFO  [org.hibernate.orm.id.table] (Quarkus Main Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRYSTATUSES]
+2026-07-30 15:01:06,010 INFO  [io.undertow.websockets] (Quarkus Main Thread) UT026003: Adding annotated server endpoint class com.commafeed.frontend.ws.WebSocketEndpoint for path /ws
+2026-07-30 15:01:06,573 INFO  [liquibase.database] (Quarkus Main Thread) Set default schema name to PUBLIC
+2026-07-30 15:01:06,616 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:06,677 INFO  [liquibase.lockservice] (Quarkus Main Thread) Successfully acquired change log lock
+2026-07-30 15:01:06,925 INFO  [liquibase.changelog] (Quarkus Main Thread) Creating database changelog table with name: PUBLIC.DATABASECHANGELOG
+2026-07-30 15:01:06,929 INFO  [liquibase.changelog] (Quarkus Main Thread) Reading from PUBLIC.DATABASECHANGELOG
+No validation errors found.
+2026-07-30 15:01:07,232 INFO  [liquibase.command] (Quarkus Main Thread) Command execution complete
+2026-07-30 15:01:08,278 INFO  [liquibase.changelog] (Quarkus Main Thread) Reading from PUBLIC.DATABASECHANGELOG
+2026-07-30 15:01:08,570 INFO  [liquibase.command] (Quarkus Main Thread) Using deploymentId: 5412866482
+2026-07-30 15:01:08,571 INFO  [liquibase.changelog] (Quarkus Main Thread) Reading from PUBLIC.DATABASECHANGELOG
+Running Changeset: changelogs/db.changelog-1.0.xml::create-app-settings::athou
+2026-07-30 15:01:08,615 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,621 INFO  [liquibase.changelog] (Quarkus Main Thread) Table APPLICATIONSETTINGS created
+2026-07-30 15:01:08,622 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-app-settings::athou ran successfully in 8ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-ffe::athou
+2026-07-30 15:01:08,628 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,633 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEED_FEEDENTRIES created
+2026-07-30 15:01:08,633 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-ffe::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-cat::athou
+2026-07-30 15:01:08,637 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,644 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEEDCATEGORIES created
+2026-07-30 15:01:08,645 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-cat::athou ran successfully in 8ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-entries::athou
+2026-07-30 15:01:08,647 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,652 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEEDENTRIES created
+2026-07-30 15:01:08,654 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-entries::athou ran successfully in 7ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-contents::athou
+2026-07-30 15:01:08,658 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,662 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEEDENTRYCONTENTS created
+2026-07-30 15:01:08,662 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-contents::athou ran successfully in 4ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-statuses::athou
+2026-07-30 15:01:08,666 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,669 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEEDENTRYSTATUSES created
+2026-07-30 15:01:08,670 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-statuses::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-feeds::athou
+2026-07-30 15:01:08,674 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,679 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEEDS created
+2026-07-30 15:01:08,679 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-feeds::athou ran successfully in 6ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-subs::athou
+2026-07-30 15:01:08,681 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,688 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEEDSUBSCRIPTIONS created
+2026-07-30 15:01:08,688 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-subs::athou ran successfully in 7ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-seq::athou
+2026-07-30 15:01:08,693 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,696 INFO  [liquibase.changelog] (Quarkus Main Thread) Table hibernate_sequences created
+2026-07-30 15:01:08,697 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-seq::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-roles::athou
+2026-07-30 15:01:08,700 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,704 INFO  [liquibase.changelog] (Quarkus Main Thread) Table USERROLES created
+2026-07-30 15:01:08,705 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-roles::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-users::athou
+2026-07-30 15:01:08,709 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,714 INFO  [liquibase.changelog] (Quarkus Main Thread) Table USERS created
+2026-07-30 15:01:08,715 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-users::athou ran successfully in 7ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-user-settings::athou
+2026-07-30 15:01:08,720 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,727 INFO  [liquibase.changelog] (Quarkus Main Thread) Table USERSETTINGS created
+2026-07-30 15:01:08,727 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-user-settings::athou ran successfully in 8ms
+Running Changeset: changelogs/db.changelog-1.0.xml::add-keys::athou
+2026-07-30 15:01:08,733 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,737 INFO  [liquibase.changelog] (Quarkus Main Thread) Primary key added to FEED_FEEDENTRIES (FEEDENTRY_ID, FEED_ID)
+2026-07-30 15:01:08,744 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEED_FEEDENTRIES (FEED_ID)
+2026-07-30 15:01:08,746 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEED_FEEDENTRIES (FEEDENTRY_ID)
+2026-07-30 15:01:08,748 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDCATEGORIES (parent_id)
+2026-07-30 15:01:08,751 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDCATEGORIES (user_id)
+2026-07-30 15:01:08,754 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDENTRIES (content_id)
+2026-07-30 15:01:08,757 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDENTRYSTATUSES (entry_id)
+2026-07-30 15:01:08,760 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDENTRYSTATUSES (subscription_id)
+2026-07-30 15:01:08,763 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDSUBSCRIPTIONS (category_id)
+2026-07-30 15:01:08,765 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDSUBSCRIPTIONS (feed_id)
+2026-07-30 15:01:08,769 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDSUBSCRIPTIONS (user_id)
+2026-07-30 15:01:08,771 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to USERROLES (user_id)
+2026-07-30 15:01:08,773 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to USERSETTINGS (user_id)
+2026-07-30 15:01:08,774 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::add-keys::athou ran successfully in 43ms
+Running Changeset: changelogs/db.changelog-1.0.xml::create-indexes::athou
+2026-07-30 15:01:08,780 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,784 INFO  [liquibase.changelog] (Quarkus Main Thread) Index guidHash_index created
+2026-07-30 15:01:08,785 INFO  [liquibase.changelog] (Quarkus Main Thread) Index updated_index created
+2026-07-30 15:01:08,787 INFO  [liquibase.changelog] (Quarkus Main Thread) Index subscription_id created
+2026-07-30 15:01:08,788 INFO  [liquibase.changelog] (Quarkus Main Thread) Index disabled_lastupdated_index created
+2026-07-30 15:01:08,789 INFO  [liquibase.changelog] (Quarkus Main Thread) Index disableduntil_index created
+2026-07-30 15:01:08,790 INFO  [liquibase.changelog] (Quarkus Main Thread) Index lastupdated_index created
+2026-07-30 15:01:08,791 INFO  [liquibase.changelog] (Quarkus Main Thread) Index urlHash_index created
+2026-07-30 15:01:08,793 INFO  [liquibase.changelog] (Quarkus Main Thread) Index useremail_index created
+2026-07-30 15:01:08,794 INFO  [liquibase.changelog] (Quarkus Main Thread) Index username_index created
+2026-07-30 15:01:08,794 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.0.xml::create-indexes::athou ran successfully in 15ms
+Running Changeset: changelogs/db.changelog-1.1.xml::recreate-fes-index::athou
+2026-07-30 15:01:08,796 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,799 INFO  [liquibase.changelog] (Quarkus Main Thread) Index sub_entry_read_index created
+2026-07-30 15:01:08,799 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::recreate-fes-index::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.1.xml::drop-fes-index::athou
+2026-07-30 15:01:08,803 INFO  [liquibase.changelog] (Quarkus Main Thread) Index subscription_id dropped from table FEEDENTRYSTATUSES
+2026-07-30 15:01:08,803 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::drop-fes-index::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-1.1.xml::drop-sequences::athou
+2026-07-30 15:01:08,807 INFO  [liquibase.changelog] (Quarkus Main Thread) Table hibernate_sequences dropped
+2026-07-30 15:01:08,807 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::drop-sequences::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-1.1.xml::recreate-sequences::athou
+2026-07-30 15:01:08,812 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,815 INFO  [liquibase.changelog] (Quarkus Main Thread) Table hibernate_sequences created
+2026-07-30 15:01:08,823 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,826 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,828 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,829 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,832 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,834 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,836 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,837 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,838 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,839 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,839 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::recreate-sequences::athou ran successfully in 28ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-log-level::athou
+2026-07-30 15:01:08,843 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-log-level::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-push-hub::athou
+2026-07-30 15:01:08,846 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-push-hub::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-push-topic::athou
+2026-07-30 15:01:08,848 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-push-topic::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-push-lastping::athou
+2026-07-30 15:01:08,852 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-push-lastping::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-lastpublished::athou
+2026-07-30 15:01:08,854 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-lastpublished::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-lastcontenthash::athou
+2026-07-30 15:01:08,856 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-lastcontenthash::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-lastinterval::athou
+2026-07-30 15:01:08,860 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-lastinterval::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-lastentrydate::athou
+2026-07-30 15:01:08,863 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-lastentrydate::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-cat-position::athou
+2026-07-30 15:01:08,866 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-cat-position::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-sub-position::athou
+2026-07-30 15:01:08,869 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::add-sub-position::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : column already exists
+
+Running Changeset: changelogs/db.changelog-1.1.xml::drop-sequence::athou
+2026-07-30 15:01:08,871 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,872 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::drop-sequence::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : table does not exist
+
+Running Changeset: changelogs/db.changelog-1.1.xml::drop-old-pushinfos::athou
+2026-07-30 15:01:08,877 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:08,879 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.1.xml::drop-old-pushinfos::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : table does not exist
+
+Running Changeset: changelogs/db.changelog-1.1.xml::add-topic-hash::athou
+2026-07-30 15:01:08,888 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns push_topic_hash(VARCHAR(40)) added to FEEDS
+2026-07-30 15:01:08,889 INFO  [liquibase.changelog] (Quarkus Main Thread) Index push_topic_hash_index created
+2026-07-30 15:01:08,890 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-topic-hash::athou ran successfully in 8ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-author::athou
+2026-07-30 15:01:08,897 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns author(VARCHAR(128)) added to FEEDENTRIES
+2026-07-30 15:01:08,898 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-author::athou ran successfully in 6ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-inserted-index::athou
+2026-07-30 15:01:08,903 INFO  [liquibase.changelog] (Quarkus Main Thread) Index inserted_index created
+2026-07-30 15:01:08,903 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-inserted-index::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::rename-lang::athou
+2026-07-30 15:01:08,906 INFO  [liquibase.changelog] (Quarkus Main Thread) Column USERSETTINGS.language renamed to user_lang
+2026-07-30 15:01:08,906 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::rename-lang::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::norwegian-migration::athou
+2026-07-30 15:01:08,909 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,909 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::norwegian-migration::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-user-created::athou
+2026-07-30 15:01:08,914 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns created(DATETIME) added to USERS
+2026-07-30 15:01:08,914 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-user-created::athou ran successfully in 4ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-proxy-setting::athou
+2026-07-30 15:01:08,918 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns imageProxyEnabled(BOOLEAN) added to APPLICATIONSETTINGS
+2026-07-30 15:01:08,919 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in APPLICATIONSETTINGS
+2026-07-30 15:01:08,919 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-proxy-setting::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-query-timeout-setting::athou
+2026-07-30 15:01:08,926 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns queryTimeout(INT) added to APPLICATIONSETTINGS
+2026-07-30 15:01:08,927 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in APPLICATIONSETTINGS
+2026-07-30 15:01:08,927 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-query-timeout-setting::athou ran successfully in 4ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-normalized-url::athou
+2026-07-30 15:01:08,936 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns normalizedUrl(VARCHAR(2048)) added to FEEDS
+2026-07-30 15:01:08,940 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns normalizedUrlHash(VARCHAR(40)) added to FEEDS
+2026-07-30 15:01:08,942 INFO  [liquibase.changelog] (Quarkus Main Thread) Index norm_url_hash_index created
+2026-07-30 15:01:08,942 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-normalized-url::athou ran successfully in 12ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-pause-crawling::athou
+2026-07-30 15:01:08,946 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns crawlingPaused(BOOLEAN) added to APPLICATIONSETTINGS
+2026-07-30 15:01:08,947 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in APPLICATIONSETTINGS
+2026-07-30 15:01:08,947 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-pause-crawling::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-content-hash-index::athou
+2026-07-30 15:01:08,951 INFO  [liquibase.changelog] (Quarkus Main Thread) Index last_content_hash_index created
+2026-07-30 15:01:08,951 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-content-hash-index::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::create-settings-index::athou
+2026-07-30 15:01:08,954 INFO  [liquibase.changelog] (Quarkus Main Thread) Index user_id_index created
+2026-07-30 15:01:08,954 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::create-settings-index::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::denormalize-statuses::athou
+2026-07-30 15:01:08,962 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns user_id(BIGINT),entryInserted(DATETIME),entryUpdated(DATETIME) added to FEEDENTRYSTATUSES
+2026-07-30 15:01:08,962 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::denormalize-statuses::athou ran successfully in 7ms
+Running Changeset: changelogs/db.changelog-1.1.xml::populate-status-dates::athou
+2026-07-30 15:01:08,965 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,965 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::populate-status-dates::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::populate-status-users::athou
+2026-07-30 15:01:08,967 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,967 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::populate-status-users::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::recreate-fes-index-2::athou
+2026-07-30 15:01:08,970 INFO  [liquibase.changelog] (Quarkus Main Thread) Index sub_entry_index created
+2026-07-30 15:01:08,971 INFO  [liquibase.changelog] (Quarkus Main Thread) Index sub_read_updated_index created
+2026-07-30 15:01:08,971 INFO  [liquibase.changelog] (Quarkus Main Thread) Index user_read_updated_index created
+2026-07-30 15:01:08,972 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::recreate-fes-index-2::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-1.1.xml::drop-fes-index-2::athou
+2026-07-30 15:01:08,973 INFO  [liquibase.changelog] (Quarkus Main Thread) Index sub_entry_read_index dropped from table FEEDENTRYSTATUSES
+2026-07-30 15:01:08,974 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::drop-fes-index-2::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-entry-updated-to-ffe::athou
+2026-07-30 15:01:08,979 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns entryUpdated(DATETIME) added to FEED_FEEDENTRIES
+2026-07-30 15:01:08,979 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-entry-updated-to-ffe::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.1.xml::populate-entry-dates::athou
+2026-07-30 15:01:08,982 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:08,982 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::populate-entry-dates::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::create-ffe-entry-updated-index::athou
+2026-07-30 15:01:08,985 INFO  [liquibase.changelog] (Quarkus Main Thread) Index feed_updated_index created
+2026-07-30 15:01:08,985 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::create-ffe-entry-updated-index::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::create-count-index::athou
+2026-07-30 15:01:08,987 INFO  [liquibase.changelog] (Quarkus Main Thread) Index user_read_sub_index created
+2026-07-30 15:01:08,987 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::create-count-index::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.1.xml::add-trim-status-setting::athou
+2026-07-30 15:01:08,992 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns keepStatusDays(INT) added to APPLICATIONSETTINGS
+2026-07-30 15:01:08,994 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in APPLICATIONSETTINGS
+2026-07-30 15:01:08,994 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::add-trim-status-setting::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-1.1.xml::status-cleanup::athou
+2026-07-30 15:01:08,997 INFO  [liquibase.changelog] (Quarkus Main Thread) Data deleted from FEEDENTRYSTATUSES
+2026-07-30 15:01:08,997 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.1.xml::status-cleanup::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.2.xml::change-entries-model::athou
+2026-07-30 15:01:09,000 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEED_FEEDENTRIES dropped
+2026-07-30 15:01:09,000 INFO  [liquibase.changelog] (Quarkus Main Thread) Data deleted from FEEDENTRYSTATUSES
+2026-07-30 15:01:09,001 INFO  [liquibase.changelog] (Quarkus Main Thread) Data deleted from FEEDENTRIES
+2026-07-30 15:01:09,002 INFO  [liquibase.changelog] (Quarkus Main Thread) Data deleted from FEEDENTRYCONTENTS
+2026-07-30 15:01:09,004 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns feed_id(BIGINT) added to FEEDENTRIES
+2026-07-30 15:01:09,007 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDENTRIES (feed_id)
+2026-07-30 15:01:09,009 INFO  [liquibase.changelog] (Quarkus Main Thread) Index feed_updated_index created
+2026-07-30 15:01:09,009 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::change-entries-model::athou ran successfully in 10ms
+Running Changeset: changelogs/db.changelog-1.2.xml::add-content-hashes::athou
+2026-07-30 15:01:09,017 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns author(VARCHAR(128)),contentHash(VARCHAR(40)) added to FEEDENTRYCONTENTS
+2026-07-30 15:01:09,018 INFO  [liquibase.changelog] (Quarkus Main Thread) Index content_hash_index created
+2026-07-30 15:01:09,021 INFO  [liquibase.changelog] (Quarkus Main Thread) Column FEEDENTRIES.author dropped
+2026-07-30 15:01:09,021 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::add-content-hashes::athou ran successfully in 9ms
+Running Changeset: changelogs/db.changelog-1.2.xml::add-new-index::athou
+2026-07-30 15:01:09,024 INFO  [liquibase.changelog] (Quarkus Main Thread) Index user_entry_index created
+2026-07-30 15:01:09,025 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::add-new-index::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-1.2.xml::drop-old-index::athou
+2026-07-30 15:01:09,028 INFO  [liquibase.changelog] (Quarkus Main Thread) Index sub_entry_index dropped from table FEEDENTRYSTATUSES
+2026-07-30 15:01:09,028 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::drop-old-index::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.2.xml::force-feed-refresh::athou
+2026-07-30 15:01:09,032 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in FEEDS
+2026-07-30 15:01:09,033 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::force-feed-refresh::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.2.xml::revamp-status-indexes::athou
+2026-07-30 15:01:09,036 INFO  [liquibase.changelog] (Quarkus Main Thread) Index user_starred_updated created
+2026-07-30 15:01:09,037 INFO  [liquibase.changelog] (Quarkus Main Thread) Index sub_index created
+2026-07-30 15:01:09,038 INFO  [liquibase.changelog] (Quarkus Main Thread) Index sub_read_updated_index dropped from table FEEDENTRYSTATUSES
+2026-07-30 15:01:09,039 INFO  [liquibase.changelog] (Quarkus Main Thread) Index user_read_updated_index dropped from table FEEDENTRYSTATUSES
+2026-07-30 15:01:09,040 INFO  [liquibase.changelog] (Quarkus Main Thread) Index user_read_sub_index dropped from table FEEDENTRYSTATUSES
+2026-07-30 15:01:09,041 INFO  [liquibase.changelog] (Quarkus Main Thread) Index user_entry_index dropped from table FEEDENTRYSTATUSES
+2026-07-30 15:01:09,041 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::revamp-status-indexes::athou ran successfully in 6ms
+Running Changeset: changelogs/db.changelog-1.2.xml::revamp-entries-indexes::athou
+2026-07-30 15:01:09,043 INFO  [liquibase.changelog] (Quarkus Main Thread) Index updated_index dropped from table FEEDENTRIES
+2026-07-30 15:01:09,043 INFO  [liquibase.changelog] (Quarkus Main Thread) Index inserted_index dropped from table FEEDENTRIES
+2026-07-30 15:01:09,043 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::revamp-entries-indexes::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.2.xml::add-starred-index-for-cleanup::athou
+2026-07-30 15:01:09,045 INFO  [liquibase.changelog] (Quarkus Main Thread) Index insterted_starred_index created
+2026-07-30 15:01:09,045 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::add-starred-index-for-cleanup::athou ran successfully in 0ms
+Running Changeset: changelogs/db.changelog-1.2.xml::add-title-hashes::athou
+2026-07-30 15:01:09,048 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns titleHash(VARCHAR(40)) added to FEEDENTRYCONTENTS
+2026-07-30 15:01:09,049 INFO  [liquibase.changelog] (Quarkus Main Thread) Index content_title_index created
+2026-07-30 15:01:09,050 INFO  [liquibase.changelog] (Quarkus Main Thread) Index content_hash_index dropped from table FEEDENTRYCONTENTS
+2026-07-30 15:01:09,050 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::add-title-hashes::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.2.xml::drop-last-update-success::athou
+2026-07-30 15:01:09,052 INFO  [liquibase.changelog] (Quarkus Main Thread) Index disabled_lastupdated_index dropped from table FEEDS
+2026-07-30 15:01:09,052 INFO  [liquibase.changelog] (Quarkus Main Thread) Index lastupdated_index dropped from table FEEDS
+2026-07-30 15:01:09,054 INFO  [liquibase.changelog] (Quarkus Main Thread) Column FEEDS.lastUpdateSuccess dropped
+2026-07-30 15:01:09,054 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::drop-last-update-success::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.2.xml::drop-url-hash::athou
+2026-07-30 15:01:09,055 INFO  [liquibase.changelog] (Quarkus Main Thread) Index urlHash_index dropped from table FEEDS
+2026-07-30 15:01:09,057 INFO  [liquibase.changelog] (Quarkus Main Thread) Column FEEDS.urlHash dropped
+2026-07-30 15:01:09,058 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::drop-url-hash::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.2.xml::create-guid-feed-index::athou
+2026-07-30 15:01:09,061 INFO  [liquibase.changelog] (Quarkus Main Thread) Index guidHash_feed_index created
+2026-07-30 15:01:09,063 INFO  [liquibase.changelog] (Quarkus Main Thread) Index guidHash_index dropped from table FEEDENTRIES
+2026-07-30 15:01:09,063 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::create-guid-feed-index::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.2.xml::refresh-interval-setting::athou
+2026-07-30 15:01:09,068 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns refreshIntervalMinutes(INT) added to APPLICATIONSETTINGS
+2026-07-30 15:01:09,069 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in APPLICATIONSETTINGS
+2026-07-30 15:01:09,070 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::refresh-interval-setting::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-1.2.xml::add-last-login-index::athou
+2026-07-30 15:01:09,073 INFO  [liquibase.changelog] (Quarkus Main Thread) Index lastlogin_index created
+2026-07-30 15:01:09,073 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::add-last-login-index::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-1.2.xml::enforce-status-uniqueness::athou
+2026-07-30 15:01:09,076 INFO  [liquibase.changelog] (Quarkus Main Thread) Index entry_subscription_id created
+2026-07-30 15:01:09,076 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.2.xml::enforce-status-uniqueness::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.2.xml::drop-previous-index::athou
+2026-07-30 15:01:09,078 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:09,080 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-1.2.xml::drop-previous-index::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : no index, skipping
+
+Running Changeset: changelogs/db.changelog-1.3.xml::add-url-after-redirect::athou
+2026-07-30 15:01:09,083 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns url_after_redirect(VARCHAR(2048)) added to FEEDS
+2026-07-30 15:01:09,083 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.3.xml::add-url-after-redirect::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-1.4.xml::scroll-speed::athou
+2026-07-30 15:01:09,086 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns scroll_speed(BIGINT) added to USERSETTINGS
+2026-07-30 15:01:09,086 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.4.xml::scroll-speed::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.4.xml::set-default-scroll-speed::athou
+2026-07-30 15:01:09,088 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in USERSETTINGS
+2026-07-30 15:01:09,088 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.4.xml::set-default-scroll-speed::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-1.4.xml::create-tags-table::athou
+2026-07-30 15:01:09,091 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEEDENTRYTAGS created
+2026-07-30 15:01:09,093 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDENTRYTAGS (entry_id)
+2026-07-30 15:01:09,094 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDENTRYTAGS (user_id)
+2026-07-30 15:01:09,095 INFO  [liquibase.changelog] (Quarkus Main Thread) Index user_entry_name_index created
+2026-07-30 15:01:09,095 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.4.xml::create-tags-table::athou ran successfully in 6ms
+Running Changeset: changelogs/db.changelog-1.4.xml::add-full-refresh-timestamp::athou
+2026-07-30 15:01:09,101 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns last_full_refresh(DATETIME) added to USERS
+2026-07-30 15:01:09,102 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.4.xml::add-full-refresh-timestamp::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-1.5.xml::add-detailed-social-options::athou
+2026-07-30 15:01:09,109 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns email(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,112 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns gmail(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,114 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns facebook(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,117 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns twitter(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,118 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns googleplus(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,120 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns tumblr(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,121 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns pocket(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,122 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns instapaper(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,124 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns buffer(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,126 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns readability(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,127 INFO  [liquibase.changelog] (Quarkus Main Thread) Column USERSETTINGS.socialButtons dropped
+2026-07-30 15:01:09,128 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in USERSETTINGS
+2026-07-30 15:01:09,128 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.5.xml::add-detailed-social-options::athou ran successfully in 23ms
+Running Changeset: changelogs/db.changelog-1.5.xml::delete-settings::athou
+2026-07-30 15:01:09,130 INFO  [liquibase.changelog] (Quarkus Main Thread) Table APPLICATIONSETTINGS dropped
+2026-07-30 15:01:09,131 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-1.5.xml::delete-settings::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-2.1.xml::add-sub-filter::athou
+2026-07-30 15:01:09,135 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns filter(varchar(4096)) added to FEEDSUBSCRIPTIONS
+2026-07-30 15:01:09,135 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-2.1.xml::add-sub-filter::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-2.2.xml::add-content-categories::athou
+2026-07-30 15:01:09,142 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns categories(varchar(4096)) added to FEEDENTRYCONTENTS
+2026-07-30 15:01:09,142 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-2.2.xml::add-content-categories::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-2.6.xml::remove-googleplus-readability::athou
+2026-07-30 15:01:09,147 INFO  [liquibase.changelog] (Quarkus Main Thread) Column USERSETTINGS.googleplus dropped
+2026-07-30 15:01:09,148 INFO  [liquibase.changelog] (Quarkus Main Thread) Column USERSETTINGS.readability dropped
+2026-07-30 15:01:09,148 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-2.6.xml::remove-googleplus-readability::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-2.6.xml::add-content-media::athou
+2026-07-30 15:01:09,155 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns mediaDescription(CLOB) added to FEEDENTRYCONTENTS
+2026-07-30 15:01:09,156 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns mediaThumbnailUrl(VARCHAR(2048)) added to FEEDENTRYCONTENTS
+2026-07-30 15:01:09,158 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns mediaThumbnailWidth(INT) added to FEEDENTRYCONTENTS
+2026-07-30 15:01:09,160 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns mediaThumbnailHeight(INT) added to FEEDENTRYCONTENTS
+2026-07-30 15:01:09,160 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-2.6.xml::add-content-media::athou ran successfully in 8ms
+Running Changeset: changelogs/db.changelog-2.6.xml::rename-filter-avoid-keyword::athou
+2026-07-30 15:01:09,164 INFO  [liquibase.changelog] (Quarkus Main Thread) Column FEEDSUBSCRIPTIONS.filter renamed to filtering_expression
+2026-07-30 15:01:09,164 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-2.6.xml::rename-filter-avoid-keyword::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-3.2.xml::delete-removed-settings::athou
+2026-07-30 15:01:09,168 INFO  [liquibase.changelog] (Quarkus Main Thread) Column USERSETTINGS.theme dropped
+2026-07-30 15:01:09,169 INFO  [liquibase.changelog] (Quarkus Main Thread) Column USERSETTINGS.viewMode dropped
+2026-07-30 15:01:09,169 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-3.2.xml::delete-removed-settings::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-3.2.xml::add-customjs-column::athou
+2026-07-30 15:01:09,171 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns customJs(CLOB) added to USERSETTINGS
+2026-07-30 15:01:09,172 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-3.2.xml::add-customjs-column::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-3.5.xml::new-hibernate-id-generator::athou
+2026-07-30 15:01:09,178 INFO  [liquibase.changelog] (Quarkus Main Thread) hibernate_sequences.sequence_next_hi_value datatype was changed to BIGINT
+2026-07-30 15:01:09,179 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:09,181 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:09,183 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:09,185 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:09,186 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:09,186 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:09,188 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:09,189 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:09,191 INFO  [liquibase.changelog] (Quarkus Main Thread) Custom SQL executed
+2026-07-30 15:01:09,191 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-3.5.xml::new-hibernate-id-generator::athou ran successfully in 16ms
+Running Changeset: changelogs/db.changelog-3.6.xml::position-required::athou
+2026-07-30 15:01:09,193 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in FEEDCATEGORIES
+2026-07-30 15:01:09,195 INFO  [liquibase.changelog] (Quarkus Main Thread) NOT NULL constraint has been added to FEEDCATEGORIES.position
+2026-07-30 15:01:09,196 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in FEEDSUBSCRIPTIONS
+2026-07-30 15:01:09,198 INFO  [liquibase.changelog] (Quarkus Main Thread) NOT NULL constraint has been added to FEEDSUBSCRIPTIONS.position
+2026-07-30 15:01:09,198 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-3.6.xml::position-required::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-3.6.xml::drop-unused-last-full-refresh::athou
+2026-07-30 15:01:09,204 INFO  [liquibase.changelog] (Quarkus Main Thread) Column USERS.last_full_refresh dropped
+2026-07-30 15:01:09,204 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-3.6.xml::drop-unused-last-full-refresh::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-3.8.xml::always-scroll-to-entry::athou
+2026-07-30 15:01:09,209 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns alwaysScrollToEntry(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,209 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-3.8.xml::always-scroll-to-entry::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-3.9.xml::mark-all-as-read-confirmation::athou
+2026-07-30 15:01:09,211 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns markAllAsReadConfirmation(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,211 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-3.9.xml::mark-all-as-read-confirmation::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-3.9.xml::custom-context-menu::athou
+2026-07-30 15:01:09,216 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns customContextMenu(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,217 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-3.9.xml::custom-context-menu::athou ran successfully in 4ms
+Running Changeset: changelogs/db.changelog-4.0.xml::remove pubsub::athou
+2026-07-30 15:01:09,221 INFO  [liquibase.changelog] (Quarkus Main Thread) Column FEEDS.pushHub dropped
+2026-07-30 15:01:09,224 INFO  [liquibase.changelog] (Quarkus Main Thread) Column FEEDS.pushTopic dropped
+2026-07-30 15:01:09,226 INFO  [liquibase.changelog] (Quarkus Main Thread) Column FEEDS.pushLastPing dropped
+2026-07-30 15:01:09,228 INFO  [liquibase.changelog] (Quarkus Main Thread) Column FEEDS.push_topic_hash dropped
+2026-07-30 15:01:09,228 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-4.0.xml::remove pubsub::athou ran successfully in 9ms
+Running Changeset: changelogs/db.changelog-4.1.xml::delete-all-sessions::athou
+2026-07-30 15:01:09,231 INFO  [liquibase.snapshot] (Quarkus Main Thread) Creating snapshot
+2026-07-30 15:01:09,233 INFO  [liquibase.changelog] (Quarkus Main Thread) Marking ChangeSet: "changelogs/db.changelog-4.1.xml::delete-all-sessions::athou" as ran despite precondition failure due to onFail='MARK_RAN': 
+          migrations.xml : table not found
+
+Running Changeset: changelogs/db.changelog-4.2.xml::use-timestamps::athou
+2026-07-30 15:01:09,237 INFO  [liquibase.changelog] (Quarkus Main Thread) FEEDS.lastUpdated datatype was changed to timestamp
+2026-07-30 15:01:09,237 INFO  [liquibase.changelog] (Quarkus Main Thread) FEEDS.lastPublishedDate datatype was changed to timestamp
+2026-07-30 15:01:09,238 INFO  [liquibase.changelog] (Quarkus Main Thread) FEEDS.lastEntryDate datatype was changed to timestamp
+2026-07-30 15:01:09,238 INFO  [liquibase.changelog] (Quarkus Main Thread) FEEDS.disabledUntil datatype was changed to timestamp
+2026-07-30 15:01:09,239 INFO  [liquibase.changelog] (Quarkus Main Thread) FEEDENTRIES.inserted datatype was changed to timestamp
+2026-07-30 15:01:09,241 INFO  [liquibase.changelog] (Quarkus Main Thread) FEEDENTRIES.updated datatype was changed to timestamp
+2026-07-30 15:01:09,242 INFO  [liquibase.changelog] (Quarkus Main Thread) FEEDENTRYSTATUSES.entryInserted datatype was changed to timestamp
+2026-07-30 15:01:09,243 INFO  [liquibase.changelog] (Quarkus Main Thread) FEEDENTRYSTATUSES.entryUpdated datatype was changed to timestamp
+2026-07-30 15:01:09,243 INFO  [liquibase.changelog] (Quarkus Main Thread) USERS.lastLogin datatype was changed to timestamp
+2026-07-30 15:01:09,244 INFO  [liquibase.changelog] (Quarkus Main Thread) USERS.created datatype was changed to timestamp
+2026-07-30 15:01:09,246 INFO  [liquibase.changelog] (Quarkus Main Thread) USERS.recoverPasswordTokenDate datatype was changed to timestamp
+2026-07-30 15:01:09,246 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-4.2.xml::use-timestamps::athou ran successfully in 10ms
+Running Changeset: changelogs/db.changelog-4.2.xml::mobile-footer-setting::athou
+2026-07-30 15:01:09,249 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns mobileFooter(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,250 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-4.2.xml::mobile-footer-setting::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-4.3.xml::convert-alwaysScrollToEntry-to-scrollMode::athou
+2026-07-30 15:01:09,254 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns scrollMode(VARCHAR(32)) added to USERSETTINGS
+2026-07-30 15:01:09,255 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in USERSETTINGS
+2026-07-30 15:01:09,256 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in USERSETTINGS
+2026-07-30 15:01:09,256 INFO  [liquibase.changelog] (Quarkus Main Thread) NOT NULL constraint has been added to USERSETTINGS.scrollMode
+2026-07-30 15:01:09,259 INFO  [liquibase.changelog] (Quarkus Main Thread) Column USERSETTINGS.alwaysScrollToEntry dropped
+2026-07-30 15:01:09,259 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-4.3.xml::convert-alwaysScrollToEntry-to-scrollMode::athou ran successfully in 7ms
+Running Changeset: changelogs/db.changelog-4.4.xml::add-icon-display-modes::athou
+2026-07-30 15:01:09,271 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns starIconDisplayMode(VARCHAR(32)),externalLinkIconDisplayMode(VARCHAR(32)) added to USERSETTINGS
+2026-07-30 15:01:09,271 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-4.4.xml::add-icon-display-modes::athou ran successfully in 10ms
+Running Changeset: changelogs/db.changelog-5.1.xml::add-unread-count-settings::athou
+2026-07-30 15:01:09,277 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns unreadCountTitle(BOOLEAN),unreadCountFavicon(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,277 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.1.xml::add-unread-count-settings::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-5.1.xml::add-missing-fk-on-statuses-user::athou
+2026-07-30 15:01:09,280 INFO  [liquibase.changelog] (Quarkus Main Thread) Data deleted from FEEDENTRYSTATUSES
+2026-07-30 15:01:09,281 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDENTRYSTATUSES (user_id)
+2026-07-30 15:01:09,281 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.1.xml::add-missing-fk-on-statuses-user::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-5.2.xml::entriesToKeepOnTopWhenScrolling-setting::athou
+2026-07-30 15:01:09,286 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns entriesToKeepOnTopWhenScrolling(INT) added to USERSETTINGS
+2026-07-30 15:01:09,286 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.2.xml::entriesToKeepOnTopWhenScrolling-setting::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-5.2.xml::content-direction::athou
+2026-07-30 15:01:09,288 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns direction(varchar(16)) added to FEEDENTRYCONTENTS
+2026-07-30 15:01:09,288 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.2.xml::content-direction::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-5.3.xml::lastForceRefresh::athou
+2026-07-30 15:01:09,292 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns lastForceRefresh(timestamp) added to USERS
+2026-07-30 15:01:09,292 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.3.xml::lastForceRefresh::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-5.8.xml::primary-color-setting::athou
+2026-07-30 15:01:09,297 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns primary_color(varchar(32)) added to USERSETTINGS
+2026-07-30 15:01:09,297 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.8.xml::primary-color-setting::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-5.11.xml::add-markAllAsReadNavigateToNextUnread::athou
+2026-07-30 15:01:09,304 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns markAllAsReadNavigateToNextUnread(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,304 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.11.xml::add-markAllAsReadNavigateToNextUnread::athou ran successfully in 4ms
+Running Changeset: changelogs/db.changelog-5.11.xml::uppercase-enum-values::athou
+2026-07-30 15:01:09,306 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in USERSETTINGS
+2026-07-30 15:01:09,307 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in FEEDENTRYCONTENTS
+2026-07-30 15:01:09,307 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.11.xml::uppercase-enum-values::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-5.12.xml::add-disablePullToRefresh-setting::athou
+2026-07-30 15:01:09,312 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns disablePullToRefresh(BOOLEAN) added to USERSETTINGS
+2026-07-30 15:01:09,312 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.12.xml::add-disablePullToRefresh-setting::athou ran successfully in 3ms
+Running Changeset: changelogs/db.changelog-5.12.xml::enable-disablePullToRefresh-setting::athou
+2026-07-30 15:01:09,314 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in USERSETTINGS
+2026-07-30 15:01:09,314 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-5.12.xml::enable-disablePullToRefresh-setting::athou ran successfully in 1ms
+Running Changeset: changelogs/db.changelog-7.0.xml::cel-filtering-expressions::athou
+2026-07-30 15:01:09,317 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns filtering_expression_legacy(VARCHAR(4096)) added to FEEDSUBSCRIPTIONS
+2026-07-30 15:01:09,319 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in FEEDSUBSCRIPTIONS
+2026-07-30 15:01:09,320 INFO  [liquibase.changelog] (Quarkus Main Thread) Data updated in FEEDSUBSCRIPTIONS
+2026-07-30 15:01:09,320 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-7.0.xml::cel-filtering-expressions::athou ran successfully in 4ms
+Running Changeset: changelogs/db.changelog-7.0.xml::add-push-notification-settings::athou
+2026-07-30 15:01:09,336 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns push_notification_type(VARCHAR(16)),push_notification_server_url(VARCHAR(1024)),push_notification_user_id(VARCHAR(512)),push_notification_user_secret(VARCHAR(512)),push_notification_topic(VARCHAR(256)) added to USERSETTINGS
+2026-07-30 15:01:09,339 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns push_notifications_enabled(BOOLEAN) added to FEEDSUBSCRIPTIONS
+2026-07-30 15:01:09,339 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-7.0.xml::add-push-notification-settings::athou ran successfully in 17ms
+Running Changeset: changelogs/db.changelog-7.0.xml::add-auto-mark-as-read-after-days::athou
+2026-07-30 15:01:09,345 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns auto_mark_as_read_after_days(INT) added to FEEDSUBSCRIPTIONS
+2026-07-30 15:01:09,347 INFO  [liquibase.changelog] (Quarkus Main Thread) Index feedsubscriptions_automark_index created
+2026-07-30 15:01:09,347 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-7.0.xml::add-auto-mark-as-read-after-days::athou ran successfully in 5ms
+Running Changeset: changelogs/db.changelog-7.2.xml::feed-icons::athou
+2026-07-30 15:01:09,351 INFO  [liquibase.changelog] (Quarkus Main Thread) Columns icon_url(CLOB) added to FEEDS
+2026-07-30 15:01:09,351 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-7.2.xml::feed-icons::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-7.2.xml::remove-pocket-sharing::athou
+2026-07-30 15:01:09,354 INFO  [liquibase.changelog] (Quarkus Main Thread) Column USERSETTINGS.pocket dropped
+2026-07-30 15:01:09,354 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-7.2.xml::remove-pocket-sharing::athou ran successfully in 2ms
+Running Changeset: changelogs/db.changelog-7.2.xml::create-feed-entry-notes::athou
+2026-07-30 15:01:09,358 INFO  [liquibase.changelog] (Quarkus Main Thread) Table FEEDENTRYNOTES created
+2026-07-30 15:01:09,360 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDENTRYNOTES (entry_id)
+2026-07-30 15:01:09,361 INFO  [liquibase.changelog] (Quarkus Main Thread) Foreign key constraint added to FEEDENTRYNOTES (user_id)
+2026-07-30 15:01:09,362 INFO  [liquibase.changelog] (Quarkus Main Thread) ChangeSet changelogs/db.changelog-7.2.xml::create-feed-entry-notes::athou ran successfully in 7ms
+
+UPDATE SUMMARY
+Run:                        111
+Previously run:               0
+Filtered out:                 0
+-------------------------------
+Total change sets:          111
+
+2026-07-30 15:01:09,369 INFO  [liquibase.util] (Quarkus Main Thread) UPDATE SUMMARY
+2026-07-30 15:01:09,369 INFO  [liquibase.util] (Quarkus Main Thread) Run:                        111
+2026-07-30 15:01:09,369 INFO  [liquibase.util] (Quarkus Main Thread) Previously run:               0
+2026-07-30 15:01:09,369 INFO  [liquibase.util] (Quarkus Main Thread) Filtered out:                 0
+2026-07-30 15:01:09,369 INFO  [liquibase.util] (Quarkus Main Thread) -------------------------------
+2026-07-30 15:01:09,369 INFO  [liquibase.util] (Quarkus Main Thread) Total change sets:          111
+2026-07-30 15:01:09,370 INFO  [liquibase.util] (Quarkus Main Thread) Update summary generated
+2026-07-30 15:01:09,371 INFO  [liquibase.command] (Quarkus Main Thread) Update command completed successfully.
+Liquibase: Update has been successful. Rows affected: 19
+2026-07-30 15:01:09,374 INFO  [liquibase.lockservice] (Quarkus Main Thread) Successfully released change log lock
+2026-07-30 15:01:09,374 INFO  [liquibase.command] (Quarkus Main Thread) Command execution complete
+2026-07-30 15:01:09,376 INFO  [liquibase.lockservice] (Quarkus Main Thread) Successfully released change log lock
+2026-07-30 15:01:09,564 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDSUBSCRIPTIONS]
+2026-07-30 15:01:09,576 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRYTAGS]
+2026-07-30 15:01:09,577 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDS]
+2026-07-30 15:01:09,577 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [USERROLES]
+2026-07-30 15:01:09,578 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [USERSETTINGS]
+2026-07-30 15:01:09,580 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRIES]
+2026-07-30 15:01:09,581 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDCATEGORIES]
+2026-07-30 15:01:09,581 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRYCONTENTS]
+2026-07-30 15:01:09,583 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [USERS]
+2026-07-30 15:01:09,584 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRYNOTES]
+2026-07-30 15:01:09,585 INFO  [org.hibernate.orm.id.table] (JPA Startup Thread) HHH090110: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [FEEDENTRYSTATUSES]
+2026-07-30 15:01:10,055 INFO  [com.commafeed.CommaFeedApplication] (Quarkus Main Thread) starting up...
+2026-07-30 15:01:10,056 DEBUG [com.commafeed.backend.feed.FeedRefreshEngine] (pool-10-thread-1) refilling queue
+2026-07-30 15:01:10,056 DEBUG [com.commafeed.backend.task.ScheduledTask] (Quarkus Main Thread) registering task OldEntriesCleanupTask for execution every 60 MINUTES, starting in 5 MINUTES
+2026-07-30 15:01:10,056 DEBUG [com.commafeed.backend.task.ScheduledTask] (Quarkus Main Thread) registering task DemoAccountCleanupTask for execution every 1440 MINUTES, starting in 1 MINUTES
+2026-07-30 15:01:10,057 DEBUG [com.commafeed.backend.task.ScheduledTask] (Quarkus Main Thread) registering task EntriesExceedingFeedCapacityCleanupTask for execution every 60 MINUTES, starting in 10 MINUTES
+2026-07-30 15:01:10,057 DEBUG [com.commafeed.backend.feed.FeedRefreshEngine] (pool-10-thread-1) sleeping for 15s
+2026-07-30 15:01:10,057 DEBUG [com.commafeed.backend.task.ScheduledTask] (Quarkus Main Thread) registering task OrphanedFeedsCleanupTask for execution every 60 MINUTES, starting in 20 MINUTES
+2026-07-30 15:01:10,057 DEBUG [com.commafeed.backend.task.ScheduledTask] (Quarkus Main Thread) registering task OrphanedContentsCleanupTask for execution every 60 MINUTES, starting in 25 MINUTES
+2026-07-30 15:01:10,057 DEBUG [com.commafeed.backend.task.ScheduledTask] (Quarkus Main Thread) registering task AutoMarkAsReadTask for execution every 60 MINUTES, starting in 30 MINUTES
+2026-07-30 15:01:10,057 DEBUG [com.commafeed.backend.task.ScheduledTask] (Quarkus Main Thread) registering task OldStatusesCleanupTask for execution every 60 MINUTES, starting in 15 MINUTES
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::loadLibrary has been called by com.aayushatharva.brotli4j.Brotli4jLoader in an unnamed module (file:/home/budulka/.m2/repository/com/aayushatharva/brotli4j/brotli4j/1.23.0/brotli4j-1.23.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-07-30 15:01:10,140 INFO  [io.quarkus] (Quarkus Main Thread) commafeed-server 7.2.0 on JVM (powered by Quarkus 3.37.4) started in 8.269s. Listening on: http://localhost:8083
+2026-07-30 15:01:10,141 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2026-07-30 15:01:10,141 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, compose, hibernate-orm, hibernate-validator, jdbc-h2, liquibase, mailer, narayana-jta, qute, rest, rest-jackson, security, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx, websockets, websockets-client]
+2026-07-30 15:01:10,352 DEBUG [com.commafeed.backend.feed.FeedRefreshEngine] (pool-11-thread-1) found 0 feeds that are up for refresh
+2026-07-30 15:01:19,064 INFO  [com.commafeed.CommaFeedApplication] (Shutdown thread) shutting down...
+2026-07-30 15:01:20,067 DEBUG [com.commafeed.backend.feed.FeedRefreshEngine] (pool-9-thread-1) interrupted while waiting for a feed in the queue
+2026-07-30 15:01:21,069 DEBUG [com.commafeed.backend.feed.FeedRefreshEngine] (pool-10-thread-1) interrupted while sleeping
+2026-07-30 15:01:21,079 INFO  [io.quarkus] (Shutdown thread) commafeed-server stopped in 2.016s
+Press [e] to edit command line args (currently ''), [h] for more options>

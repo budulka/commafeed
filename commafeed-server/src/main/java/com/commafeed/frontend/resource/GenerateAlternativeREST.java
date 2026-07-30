@@ -6,7 +6,6 @@ import com.commafeed.backend.service.FeedEntryService;
 import com.commafeed.backend.service.LLMService;
 import com.commafeed.frontend.model.GenerateAlternativeResponse;
 import com.commafeed.frontend.model.request.GenerateAlternativeRequest;
-import com.commafeed.backend.model.User;
 import com.commafeed.security.AuthenticationContext;
 import com.commafeed.security.Roles;
 import com.google.common.base.Preconditions;

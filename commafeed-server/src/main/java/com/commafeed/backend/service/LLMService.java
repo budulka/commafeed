@@ -54,7 +54,7 @@ public class LLMService {
                     HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build();
 
             if (model == null || model.isEmpty()) {
-                model = "llama3-8b-8192";
+                model = "llama-3.1-8b-instant";
             }
 
             Map<String, Object> payload =
@@ -98,6 +98,8 @@ public class LLMService {
                 return resp.body();
             }
 
+            System.out.println("[DEBUG_LOG] LLM ERROR STATUS: " + resp.statusCode());
+            System.out.println("[DEBUG_LOG] LLM ERROR BODY: " + resp.body());
             throw new LLMException("LLM returned status " + resp.statusCode() + ": " + resp.body());
         } catch (LLMException e) {
             throw e;

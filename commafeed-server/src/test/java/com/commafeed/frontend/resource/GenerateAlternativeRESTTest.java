@@ -2,8 +2,6 @@ package com.commafeed.frontend.resource;
 
 import com.commafeed.backend.model.FeedEntry;
 import com.commafeed.backend.model.FeedEntryContent;
-import com.commafeed.backend.model.FeedEntryStatus;
-import com.commafeed.backend.model.User;
 import com.commafeed.backend.service.FeedEntryService;
 import com.commafeed.backend.service.LLMService;
 import com.commafeed.frontend.model.request.GenerateAlternativeRequest;
@@ -18,10 +16,6 @@ public class GenerateAlternativeRESTTest {
     @Test
     public void testSuccess() throws Exception {
         AuthenticationContext auth = Mockito.mock(AuthenticationContext.class);
-        User user = new User();
-        user.setId(1L);
-        Mockito.when(auth.getCurrentUser()).thenReturn(user);
-
         FeedEntryService feedEntryService = Mockito.mock(FeedEntryService.class);
         LLMService llmService = Mockito.mock(LLMService.class);
 
@@ -32,12 +26,7 @@ public class GenerateAlternativeRESTTest {
         content.setContent("Original content body");
         entry.setContent(content);
 
-        FeedEntryStatus status = new FeedEntryStatus();
-        status.setId(1002L);
-        status.setUser(user);
-        status.setEntry(entry);
-
-        Mockito.when(feedEntryService.getStatusById(1002L)).thenReturn(status);
+        Mockito.when(feedEntryService.getById(123L)).thenReturn(entry);
         Mockito.when(llmService.generateAlternative(Mockito.anyString(), Mockito.anyString()))
                 .thenReturn("Rewritten text");
 
@@ -48,7 +37,7 @@ public class GenerateAlternativeRESTTest {
         req.setTarget("title");
         req.setPrompt("Rewrite for technical audience");
 
-        Response resp = rest.generateAlternative(1002L, req);
+        Response resp = rest.generateAlternative(123L, req);
         Assertions.assertEquals(200, resp.getStatus());
         Object entity = resp.getEntity();
         Assertions.assertNotNull(entity);
@@ -77,14 +66,10 @@ public class GenerateAlternativeRESTTest {
     @Test
     public void testNotFound() {
         AuthenticationContext auth = Mockito.mock(AuthenticationContext.class);
-        User user = new User();
-        user.setId(1L);
-        Mockito.when(auth.getCurrentUser()).thenReturn(user);
-
         FeedEntryService feedEntryService = Mockito.mock(FeedEntryService.class);
         LLMService llmService = Mockito.mock(LLMService.class);
 
-        Mockito.when(feedEntryService.getStatusById(999L)).thenReturn(null);
+        Mockito.when(feedEntryService.getById(999L)).thenReturn(null);
 
         GenerateAlternativeREST rest =
                 new GenerateAlternativeREST(auth, feedEntryService, llmService);
@@ -100,10 +85,6 @@ public class GenerateAlternativeRESTTest {
     @Test
     public void testLLMFailure() throws Exception {
         AuthenticationContext auth = Mockito.mock(AuthenticationContext.class);
-        User user = new User();
-        user.setId(1L);
-        Mockito.when(auth.getCurrentUser()).thenReturn(user);
-
         FeedEntryService feedEntryService = Mockito.mock(FeedEntryService.class);
         LLMService llmService = Mockito.mock(LLMService.class);
 
@@ -114,12 +95,7 @@ public class GenerateAlternativeRESTTest {
         content.setContent("c");
         entry.setContent(content);
 
-        FeedEntryStatus status = new FeedEntryStatus();
-        status.setId(555L);
-        status.setUser(user);
-        status.setEntry(entry);
-
-        Mockito.when(feedEntryService.getStatusById(555L)).thenReturn(status);
+        Mockito.when(feedEntryService.getById(5L)).thenReturn(entry);
         Mockito.when(llmService.generateAlternative(Mockito.anyString(), Mockito.anyString()))
                 .thenThrow(new LLMService.LLMException("fail"));
 
@@ -129,7 +105,7 @@ public class GenerateAlternativeRESTTest {
         req.setTarget("content");
         req.setPrompt("p");
 
-        Response resp = rest.generateAlternative(555L, req);
+        Response resp = rest.generateAlternative(5L, req);
         Assertions.assertEquals(502, resp.getStatus());
     }
 }

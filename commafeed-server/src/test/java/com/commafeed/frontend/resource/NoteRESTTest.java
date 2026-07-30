@@ -4,7 +4,6 @@ import com.commafeed.backend.dao.FeedEntryDAO;
 import com.commafeed.backend.dao.FeedEntryNoteDAO;
 import com.commafeed.backend.model.FeedEntry;
 import com.commafeed.backend.model.FeedEntryNote;
-import com.commafeed.backend.model.FeedEntryStatus;
 import com.commafeed.backend.model.User;
 import com.commafeed.backend.rest.request.NoteRequest;
 import com.commafeed.backend.rest.resources.NoteREST;
@@ -52,19 +51,13 @@ public class NoteRESTTest {
     @Test
     public void testCreateNoteSuccess() {
         NoteRequest req = new NoteRequest();
-        req.setEntryId(1002L);
+        req.setEntryId(123L);
         req.setText("My note");
         req.setRating(5);
 
         FeedEntry entry = new FeedEntry();
         entry.setId(123L);
-
-        FeedEntryStatus status = new FeedEntryStatus();
-        status.setId(1002L);
-        status.setUser(user);
-        status.setEntry(entry);
-
-        Mockito.when(feedEntryService.getStatusById(1002L)).thenReturn(status);
+        Mockito.when(feedEntryDAO.findById(123L)).thenReturn(entry);
 
         FeedEntryNote note = new FeedEntryNote();
         note.setId(1L);

@@ -4,7 +4,6 @@ import com.commafeed.backend.dao.FeedEntryDAO;
 import com.commafeed.backend.dao.FeedEntryNoteDAO;
 import com.commafeed.backend.model.FeedEntry;
 import com.commafeed.backend.model.FeedEntryNote;
-import com.commafeed.backend.model.FeedEntryStatus;
 import com.commafeed.backend.model.User;
 import com.commafeed.backend.rest.request.NoteRequest;
 import com.commafeed.backend.rest.response.NoteResponse;
@@ -61,20 +60,18 @@ public class NoteREST {
         if (user == null) {
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
-        FeedEntryStatus status = feedEntryService.getStatusById(req.getEntryId());
-        if (status == null || !status.getUser().getId().equals(user.getId())) {
+        FeedEntry entry = feedEntryDAO.findById(req.getEntryId());
+        if (entry == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        FeedEntry entry = status.getEntry();
         boolean existed = feedEntryNoteDAO.findByEntry(user, entry) != null;
         FeedEntryNote note =
                 feedEntryNoteService.createOrAttach(
-                        user, entry.getId(), req.getText(), req.getRating());
+                        user, req.getEntryId(), req.getText(), req.getRating());
         if (note == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
         NoteResponse resp = NoteResponse.from(note);
-        resp.setEntryId(status.getId());
         if (existed) {
             return Response.ok(resp).build();
         }

@@ -51,4 +51,13 @@ public class ExceptionMappers {
 
     @RegisterForReflection
     public record ValidationFailed(String message) {}
+
+    @ServerExceptionMapper(com.commafeed.backend.service.LLMService.LLMException.class)
+    public RestResponse<LLMFailed> llmFailed(com.commafeed.backend.service.LLMService.LLMException e) {
+        return RestResponse.status(Status.BAD_GATEWAY, new LLMFailed("LLM service failed"));
+    }
+
+    @RegisterForReflection
+    public record LLMFailed(String message) {}
 }
+
